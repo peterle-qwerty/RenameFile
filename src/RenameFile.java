@@ -7,14 +7,18 @@ public class RenameFile {
 	public static void main(String[] args) throws InvalidFileException {
 		// TODO Auto-generated method stub
 		String filename="";
+		File file = null;
 		try {
 		  filename = args[0];
-		} catch (Exception e) {
+ 		  file = new File(filename);
+		  if (!file.exists()) {
+			throw new InvalidFileException("Invalid File");
+		  }
+		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Need argument of a valid filename.");
-		}
-		File file = new File(filename);
-		if (!file.exists()) {
+		} catch (InvalidFileException e) {
 			System.out.println("File ["+filename+"] doesn't exist.");
+			
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
 //		System.out.println("After Format : " + sdf.format(file.lastModified()));
@@ -44,11 +48,5 @@ public class RenameFile {
 	    }
 	}
 
-	public class InvalidFileException extends Exception {
 
-		  public InvalidFileException(String message){
-		     super(message);
-		  }
-
-		}	
 }
