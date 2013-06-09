@@ -11,9 +11,9 @@ public class RenameFile {
 		SimpleDateFormat sdf = null;
 		try {
 			
-		  if (true) {
-				throw new Exception("ERROR");
-		  }
+//		  if (true) {
+//				throw new Exception("ERROR");
+//		  }
 		  filename = args[0];
  		  file = new File(filename);
 		  if (!file.exists()) {
@@ -22,6 +22,7 @@ public class RenameFile {
           sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
   		  String[] tmp = filename.split("\\.");
   		  String extension = tmp[tmp.length-1];
+  		  
   		
   		  File file2;
   	      int idx=1;
