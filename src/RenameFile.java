@@ -23,7 +23,7 @@ public class RenameFile {
   		  String[] tmp = filename.split("\\.");
   		  String extension = tmp[tmp.length-1];
   		  
-  		
+  		 
   		  File file2;
   	      int idx=1;
 
